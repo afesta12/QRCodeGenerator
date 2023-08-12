@@ -6,6 +6,13 @@
     <title>QR Code Generator</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- qrcodejs -->
+    <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+    <script src="index.js" defer></script>
 </head>
 <body>
     
@@ -31,6 +38,12 @@
                     <input class="input" type="text" placeholder="Enter your website Link">
                     <span class="focus"></span>
                     <p>www.example.com</p>
+
+                    <select class="size" name="size" aria-invalid="false">
+                        <option value="300">300x300</option>
+                        <option value="600">600x600</option>
+                        <option value="900">900x900</option>
+                    </select>
                 </div>
 
                 <button class="button">Create QR Code</button>
@@ -41,7 +54,7 @@
 
                 <div class="img-container large">
 
-                    <img src="/images/Image (2).svg" alt="QR Code">
+                    <div id="qrcode"></div>
 
                 </div>
 
@@ -50,5 +63,7 @@
         </div>
 
     </main>
+
+    
 </body>
 </html>

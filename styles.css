@@ -182,4 +182,19 @@
 
 /* End Main */
 
+/* Responsive */
 
+    @media screen and (min-width: 700px) {
+
+        .main {
+
+            flex-direction: initial;
+        }
+
+        .bottom {
+
+            justify-content: center;
+        }
+    }
+
+/* End responsive */

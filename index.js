@@ -14,20 +14,37 @@ const generateQR = () => {
 
 const createQR = (url) => {
 
-    const el = document.getElementById("qrcode");
-    const size = document.querySelector(".size").value;
-
     const qrCode = new QRCode('qrcode', {
 
         text: url,
         width: 300,
         height: 300,
-    })
+    });
+
+    setTimeout(() => {
+
+        const saveURL = qr.querySelector('img').src;
+        saveButton(saveURL);
+    }, 50)
 }
 
 const clear = () => {
 
     qr.innerHTML = "";
+    const saveBtn = document.getElementById("save-link");
+
+    if (saveBtn) saveBtn.remove();
 }
+
+const saveButton = (saveUrl) => {
+
+    const link = document.createElement('a');
+    link.id = 'save-link';
+
+    link.href = saveUrl;
+    link.download = 'qrcode';
+    link.innerHTML = 'Save Image';
+    document.querySelector(".bottom").appendChild(link);
+};
 
 submit.addEventListener("click", generateQR);
